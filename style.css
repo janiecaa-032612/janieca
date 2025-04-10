@@ -1,0 +1,134 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('download\ \(3\).jpg');  /* background image for all pages */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #f0f0f0;
+    margin: 0;
+}
+
+header {
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 0.5rem;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #444;
+    color: #fff;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 3000px;
+    padding: 2rem;
+    gap: 20px;
+}
+
+.textbox {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: #f0f0f0;
+    max-width: 800px; /* Slightly reduced width */
+    margin: 2rem auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    flex: 2;
+}
+
+.content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Slightly reduced gap */
+    margin: 2rem auto;
+    max-width: 1000px; /* Slightly reduced max-width */
+    padding: 1rem;
+}
+
+.content-flex img {
+    max-width: 350px; /* Adjust image width */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.image-box {
+    flex: 1;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* For pages without images: basic.html, test, references, and about-us */
+body.no-image .content-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+body.no-image .image-box {
+    display: none;  /* Hide the image for these pages */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #bbb;
+}
+/* Style for the button list */
+.button-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-list button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.button-list button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.button-list button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Computer Basics Quiz</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about-computer.html">About Computer</a>
+        <a href="ms-office.html">MS Office</a>
+        <a href="basic-html.html">HTML</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="test.html" class="active">Test</a>
+        <a href="references.html">References</a>
+        <a href="about-us.html">About Us</a>
+    </nav>
+
+    <div class="content">
+        <div class="textbox">
+            <h2>Take the Quiz to Test Your Knowledge</h2>
+            <form id="quiz-form">
+                <!-- Question 1 -->
+                <div class="question">
+                    <label for="q1">1. What is the main function of the CPU?</label><br>
+                    <input type="radio" id="q1a" name="q1" value="a"> A. Store data<br>
+                    <input type="radio" id="q1b" name="q1" value="b"> B. Process data<br>
+                    <input type="radio" id="q1c" name="q1" value="c"> C. Display data<br>
+                    <input type="radio" id="q1d" name="q1" value="d"> D. Transfer data<br>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question">
+                    <label for="q2">2. Which of these is a programming language?</label><br>
+                    <input type="radio" id="q2a" name="q2" value="a"> A. HTML<br>
+                    <input type="radio" id="q2b" name="q2" value="b"> B. CSS<br>
+                    <input type="radio" id="q2c" name="q2" value="c"> C. JavaScript<br>
+                    <input type="radio" id="q2d" name="q2" value="d"> D. All of the above<br>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question">
+                    <label for="q3">3. What does RAM stand for?</label><br>
+                    <input type="radio" id="q3a" name="q3" value="a"> A. Read-Only Memory<br>
+                    <input type="radio" id="q3b" name="q3" value="b"> B. Random Access Memory<br>
+                    <input type="radio" id="q3c" name="q3" value="c"> C. Reliable Access Memory<br>
+                    <input type="radio" id="q3d" name="q3" value="d"> D. Random Application Memory<br>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question">
+                    <label for="q4">4. Which company developed Windows operating system?</label><br>
+                    <input type="radio" id="q4a" name="q4" value="a"> A. Apple<br>
+                    <input type="radio" id="q4b" name="q4" value="b"> B. Microsoft<br>
+                    <input type="radio" id="q4c" name="q4" value="c"> C. IBM<br>
+                    <input type="radio" id="q4d" name="q4" value="d"> D. Google<br>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question">
+                    <label for="q5">5. What is the function of a modem?</label><br>
+                    <input type="radio" id="q5a" name="q5" value="a"> A. To amplify signals<br>
+                    <input type="radio" id="q5b" name="q5" value="b"> B. To connect to the internet<br>
+                    <input type="radio" id="q5c" name="q5" value="c"> C. To store files<br>
+                    <input type="radio" id="q5d" name="q5" value="d"> D. To display images<br>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question">
+                    <label for="q6">6. What does HTML stand for?</label><br>
+                    <input type="radio" id="q6a" name="q6" value="a"> A. HyperText Markup Language<br>
+                    <input type="radio" id="q6b" name="q6" value="b"> B. Hyperlinks and Text Markup Language<br>
+                    <input type="radio" id="q6c" name="q6" value="c"> C. Home Tool Markup Language<br>
+                    <input type="radio" id="q6d" name="q6" value="d"> D. HyperText Machine Language<br>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question">
+                    <label for="q7">7. Which of these is an operating system?</label><br>
+                    <input type="radio" id="q7a" name="q7" value="a"> A. Windows<br>
+                    <input type="radio" id="q7b" name="q7" value="b"> B. Linux<br>
+                    <input type="radio" id="q7c" name="q7" value="c"> C. macOS<br>
+                    <input type="radio" id="q7d" name="q7" value="d"> D. All of the above<br>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question">
+                    <label for="q8">8. What is the purpose of an IP address?</label><br>
+                    <input type="radio" id="q8a" name="q8" value="a"> A. To identify devices on a network<br>
+                    <input type="radio" id="q8b" name="q8" value="b"> B. To encrypt data<br>
+                    <input type="radio" id="q8c" name="q8" value="c"> C. To store data<br>
+                    <input type="radio" id="q8d" name="q8" value="d"> D. To process information<br>
+                </div>
+
+                <br>
+                <button type="button" onclick="calculateScore()">Submit Quiz</button>
+            </form>
+
+            <h3>Your Score: <span id="score">0</span> out of 8</h3>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Educational Website. All rights reserved.
+    </footer>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 8;
+            const answers = {
+                q1: 'b', q2: 'c', q3: 'b', q4: 'b', q5: 'b',
+                q6: 'a', q7: 'd', q8: 'a'
+            };
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').textContent = score;
+        }
+    </script>
+</body>
+</html>
